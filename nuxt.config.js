@@ -26,6 +26,11 @@ module.exports = {
     */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
+        // 使用stylus  需npm install stylus stylus-loader  --save-dev 
+        // 并更改webpack配置
+        const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader') 
+        vueLoader.options.loaders.stylus = 'vue-style-loader!css-loader!stylus-loader'
+
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
