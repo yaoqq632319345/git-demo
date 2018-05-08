@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "element-ui": "^2.3.7",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
@@ -32,4 +33,3 @@
     "stylus-loader": "^3.0.2"
   }
 }
-

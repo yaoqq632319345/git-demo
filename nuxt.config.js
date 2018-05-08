@@ -20,7 +20,19 @@ module.exports = {
   /*
   ** Build configuration
   */
+  // 添加element-ui
+  plugins: [{
+    src: '~plugins/ElementUI',
+    ssr: true,
+  }],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    // 加载公用样式
+    '~assets/css/reset.css'
+  ],
   build: {
+    // 抽离css
+    extractCSS: { allChunks: true },
     /*
     ** Run ESLint on save
     */
