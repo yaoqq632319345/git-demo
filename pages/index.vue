@@ -17,14 +17,21 @@
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import axios from 'axios'
 
 export default {
   components: {
     AppLogo
   },
+  head () {
+    return {
+      title: this.hello,
+      meta: [{ hid: 'description', name: 'description', content: 'My custom description' }]
+    }
+  },
   data () {
     return {
-      // title: '111'
+      hello: '111'
     }
   },
   asyncData (context) {
@@ -34,6 +41,9 @@ export default {
         resolve({ hello: 'hello world' })
       }, 1000)
     })
+  },
+  created () {
+    console.log(axios)
   }
 }
 </script>
